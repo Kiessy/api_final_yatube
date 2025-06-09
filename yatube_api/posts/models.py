@@ -22,7 +22,7 @@ class Post(models.Model):
         upload_to='posts/', null=True, blank=True)
     group = models.ForeignKey(
         Group, on_delete=models.SET_NULL,
-        related_name='groups', null=True, blank=True)
+        related_name='posts', null=True, blank=True)
 
     def __str__(self):
         return self.text

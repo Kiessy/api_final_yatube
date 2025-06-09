@@ -55,7 +55,7 @@ class FollowSerializer(serializers.ModelSerializer):
                 message='Вы уже подписаны'
             )
         ]
-        
+
         fields = '__all__'
 
         def validate_following(self, data):
