@@ -3,7 +3,7 @@ from django.shortcuts import get_object_or_404
 
 from posts.models import Post, Group
 from api.serializers import (
-    PostSerializer, 
+    PostSerializer,
     CommentSerializer,
     FollowSerializer,
     GroupSerializer
@@ -41,7 +41,7 @@ class CommentViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         post = get_object_or_404(Post, pk=self.kwargs.get('post_id'))
         return post.comments.all()
-    
+
 
 class FollowViewSet(
     mixins.CreateModelMixin,
@@ -58,7 +58,6 @@ class FollowViewSet(
 
     def get_queryset(self):
         return self.request.user.follower.all()
-    
+
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
-        

@@ -11,7 +11,7 @@ class Group(models.Model):
 
     def __str__(self):
         return self.title
-       
+
 
 class Post(models.Model):
     text = models.TextField()
@@ -36,7 +36,7 @@ class Comment(models.Model):
     text = models.TextField()
     created = models.DateTimeField(
         'Дата добавления', auto_now_add=True, db_index=True)
-    
+
 
 class Follow(models.Model):
     user = models.ForeignKey(
